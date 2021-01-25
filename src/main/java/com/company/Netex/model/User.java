@@ -11,6 +11,7 @@ import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,9 +27,6 @@ public class User {
     int year;
     String name;
     String title;
-
-
-
 
 
     private static String readAll(Reader rd) throws IOException {
@@ -57,6 +55,26 @@ public class User {
         System.out.println(json.toString(1));
 //        System.out.println(json.toString(json.getInt("Year")));
 //        System.out.println(json.getJSONArray("Title"));
+
+        String jsonString = json.toString(1);
+        JSONObject obj = new JSONObject(jsonString);
+        JSONArray arr = obj.getJSONArray("Search");
+        for (int i = 0; i < arr.length(); i++) {
+
+            String type = arr.getJSONObject(i).getString("Type");
+            String year = arr.getJSONObject(i).getString("Year");
+            String imdbID = arr.getJSONObject(i).getString("imdbID");
+            String poster = arr.getJSONObject(i).getString("Poster");
+            String title = arr.getJSONObject(i).getString("Title");
+
+            System.out.println(type);
+            System.out.println(year);
+            System.out.println(imdbID);
+            System.out.println(poster);
+            System.out.println(title);
+
+
+        }
     }
 }
 
