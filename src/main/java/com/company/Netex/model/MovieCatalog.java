@@ -11,15 +11,16 @@ import javax.persistence.Id;
 
 public class MovieCatalog {
     @Id
-    long id;
-    int year;
+    String id;
+    String year;
     String name;
     String title;
     String imdbID;
     String type;
     String poster;
 
-    public MovieCatalog(long id, int year, String name, String title, String imdbID, String type, String poster) {
+
+    public MovieCatalog(String id, String year, String name, String title, String imdbID, String type, String poster) {
         this.id = id;
         this.year = year;
         this.name = name;
@@ -27,6 +28,8 @@ public class MovieCatalog {
         this.imdbID = imdbID;
         this.type = type;
         this.poster = poster;
+
     }
+
 }
 

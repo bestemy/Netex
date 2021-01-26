@@ -1,7 +1,7 @@
 package com.company.Netex;
 
 import com.company.Netex.model.MovieCatalog;
-import com.company.Netex.model.User;
+import lombok.Data;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,8 +13,7 @@ import java.nio.charset.Charset;
 
 
 @SpringBootApplication
-public class MovieCatalogApplication extends MovieCatalog {
-
+public class MovieCatalogApplication {
 
     private static String readAll(Reader rd) throws IOException {
     StringBuilder sb = new StringBuilder();
@@ -60,6 +59,10 @@ public class MovieCatalogApplication extends MovieCatalog {
             System.out.println(poster);
             System.out.println(title);
 
+             MovieCatalog s = new MovieCatalog();
+             s.setTitle(title);
+             s.setId(arr.getJSONObject(i).getString("imdbID"));
+             s.getId();
         }
     }
 }

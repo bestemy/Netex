@@ -20,8 +20,8 @@ import javax.persistence.Id;
 @Entity
 public class User  extends  MovieCatalog{
     @Id
-    long id;
-    int year;
+    String id;
+    String year;
     String name;
     String title;
 
