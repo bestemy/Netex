@@ -2,14 +2,8 @@ package com.company.Netex.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.io.*;
-import java.net.URL;
-import java.nio.charset.Charset;
 
 @Entity
 @NoArgsConstructor
@@ -25,5 +19,5 @@ public class MovieCatalog {
     String type;
     String poster;
 
-}
+    }
 

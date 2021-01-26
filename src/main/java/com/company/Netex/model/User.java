@@ -2,7 +2,6 @@ package com.company.Netex.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,18 +9,16 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @NoArgsConstructor
 @Data
 @Entity
-public class User {
+public class User  extends  MovieCatalog{
     @Id
     long id;
     int year;
@@ -53,8 +50,6 @@ public class User {
     public static void main(String[] args) throws IOException, JSONException {
         JSONObject json = readJsonFromUrl("http://www.omdbapi.com/?s=star&wars&apikey=e12179bf");
         System.out.println(json.toString(1));
-//        System.out.println(json.toString(json.getInt("Year")));
-//        System.out.println(json.getJSONArray("Title"));
 
         String jsonString = json.toString(1);
         JSONObject obj = new JSONObject(jsonString);
@@ -73,29 +68,7 @@ public class User {
             System.out.println(poster);
             System.out.println(title);
 
-
         }
     }
 }
 
-
-//    public static class SteamService {
-//        public static Result getMatchHistory(String steamid){
-//            Result result = new Result() {
-//                @Override
-//                public void setSystemId(String systemId) {
-//
-//                }
-//
-//                @Override
-//                public String getSystemId() {
-//                    return null;
-//                }
-//            };
-//            String MatchHistoryUrl = "http://www.omdbapi.com/?s=star&wars&apikey=e12179bf"+steamid;
-//            RestTemplate restTemplate = new RestTemplate();
-//            Result jsonresult = restTemplate.getForObject(MatchHistoryUrl, Result.class);
-//            return jsonresult;
-//        }
-//    }
-//}

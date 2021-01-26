@@ -1,5 +1,6 @@
 package com.company.Netex;
 
+import com.company.Netex.model.User;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,9 @@ public class MovieCatalogApplication<Person> {
 
     public static void main(String[] args) {
         SpringApplication.run(MovieCatalogApplication.class, args);
+
+
+        User.class.getClasses();
     }
 
 
